@@ -1,3 +1,1 @@
-# Valgo
-
-https://valgo.dev
+Minimal website for **Valgo**: https://valgo.dev
