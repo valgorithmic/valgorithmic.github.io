@@ -22,7 +22,6 @@
       --border: #222638;
     }
 
-    /* Center the iframe container on the page */
     html, body {
       height: 100%;
       margin: 0;
@@ -31,13 +30,11 @@
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
     }
 
-    /* Grid centering keeps it perfectly middle on any screen */
     body {
       display: grid;
       place-items: center;
     }
 
-    /* Responsive “card” that holds the iframe */
     .frame {
       width: min(95vw, 1000px);
       height: min(85vh, 900px);
@@ -45,7 +42,9 @@
       border: 1px solid var(--border);
       border-radius: 16px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-      overflow: hidden; /* rounds the iframe corners */
+      overflow: hidden;
+      margin-top: 70px;
+      margin-bottom: 70px;
     }
 
     .frame iframe {
@@ -54,18 +53,42 @@
       border: 0;
     }
 
-    /* Optional: light mode if the OS prefers it */
-    @media (prefers-color-scheme: light) {
+    .logo-link {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 20px;
+      padding-bottom: 20px;
+      z-index: 1000;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .logo-link img {
+      max-height: 80px;
+      height: auto;
+      cursor: pointer;
+    }
+
+    img.logo {
+      max-height: 50px;
+      width: 60%;
+      height: auto;
+    }
+
+    /* @media (prefers-color-scheme: light) {
       :root {
         --bg: #f6f7fb;
         --card: #ffffff;
         --border: #e5e7ef;
       }
       body { color: #11131a; }
-    }
+    } */
   </style>
 </head>
 <body>
+  <a href="/" class="logo-link"><img src="/media/valgo-white.svg" alt="Valgo" class="logo"/></a>
   <div class="frame" role="region" aria-label="Calendar">
     <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FLos_Angeles&showPrint=0&showTabs=0&showCalendars=0&mode=WEEK&title=Valgo%20Co-Founders&src=cm1vc3M5MkBnbWFpbC5jb20&src=bDFka2d0aTltZnFnaHBxbnI0YXYwZzl2NjhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=cm9iZXJ0QHZhbGdvLmRldg&src=c21rYXR6MTJAZ21haWwuY29t&src=c3lkbmV5QHZhbGdvLmRldg&olor=%2380001E&color=%2380001E&color=%2380001E&color=%2380001E&color=%2380001E" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
   </div>
